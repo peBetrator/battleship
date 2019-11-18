@@ -1,0 +1,27 @@
+.ship {
+  display: flex;
+  margin: 5px;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.ship__part {
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ship__row {
+  display: flex;
+}
+
+.ships__menu {
+  float: right;
+}
