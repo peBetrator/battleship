@@ -20,12 +20,11 @@ class Row extends Component {
 
   render() {
     const { battlefield, x } = this.props;
-
-    const renderCells = () => {
-      const row = [];
-
-      for (let i = 0; i < GRID_SIZE; i++)
-        row.push(
+    const row = new Array(GRID_SIZE).fill(0);
+    
+    return (
+      <div className="grid__row">
+        {row.map((el, i) =>
           this.checkShipPresence(x, i) ? (
             <BoatCell
               key={i}
@@ -37,11 +36,9 @@ class Row extends Component {
           ) : (
             <EmptyCell key={i} x={x} y={i} />
           )
-        );
-      return row;
-    };
-
-    return <div className="grid__row">{renderCells()}</div>;
+        )}
+      </div>
+    );
   }
 }
 

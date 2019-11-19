@@ -4,14 +4,15 @@ import './index.css';
 import Row from './Row';
 
 function Grid(props) {
-  const renderRows = () => {
-    const grid = [];
+  const grid = new Array(GRID_SIZE).fill(0);
 
-    for (let i = 0; i < GRID_SIZE; i++) grid.push(<Row key={i} x={i} />);
-    return grid;
-  };
-
-  return <div className="grid">{renderRows()}</div>;
+  return (
+    <div className="grid">
+      {grid.map((el, i) => (
+        <Row key={i} x={i} />
+      ))}
+    </div>
+  );
 }
 
 export default Grid;
